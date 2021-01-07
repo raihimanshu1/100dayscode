@@ -1,0 +1,57 @@
+this is reverese of staring ...i will do this in three ways..
+
+Simple loop...
+
+public class Main
+{
+	public static void main(String[] args) {
+		String normalString= "reverse of me";
+		int strln=normalString.length();
+		String reverse = "";
+		for(int i=strln-1;i>=0;i--){
+		    reverse+=normalString.charAt(i);
+		}
+		System.out.println("Reverse is: " + reverse);
+	}
+}
+
+
+using recursion ...
+
+public class Main
+{
+	public static void main(String[] args) {
+		Main rsr = new Main();
+		String input = "make my reverse";
+		String reverse = rsr.recursiveReverse(input);
+		System.out.println("Reverse is:" + reverse);
+	}
+ 
+	public String recursiveReverse(String input) {
+		if (input.length() == 1)
+			return input;
+		else
+			return input.charAt(input.length() - 1) + 
+			 recursiveReverse(input.substring(0, input.length() - 1));
+ 
+	}
+}
+
+
+using predefine method of StringBuffer......
+
+public class Main
+{
+	public static void main(String[] args) {
+	    String input = "reverese it";
+		StringBuffer sb = new StringBuffer(input);
+		System.out.println("Reverse is:" + sb.reverse());
+		
+	}
+ 
+	
+}
+
+
+reference java2blog
+
