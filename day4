@@ -1,5 +1,8 @@
-import java.util. * ;
+
 /*How to check if String has all unique characters in java*/
+
+
+import java.util. * ;
 public class Main {
   public static void main(String[] args) {
     System.out.println("is word  has unique characters : " + hasAllUniqueChars("world"));
@@ -16,3 +19,55 @@ public class Main {
     return true;
   }
 }
+
+
+2 proces:
+
+
+import java.util. * ;
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("is word  has unique characters : " + hasAllUniqueChars("world"));
+  }
+
+  public static boolean hasAllUniqueChars(String word) {
+
+    for (int index = 0; index < word.length(); index++) {
+
+      char c = word.charAt(index);
+      if (word.indexOf(c) != word.lastIndexOf(c)) return false;
+    }
+
+    return true;
+  }
+}
+
+
+3 process:
+
+import java.util. * ;
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("is word  has unique characters : " + hasAllUniqueChars("world"));
+  }
+
+  public static boolean hasAllUniqueChars(String word) {
+
+    boolean[] charMap = new boolean[26];
+
+    for (int index = 0; index < word.length(); index++) {
+      // we are substracting char's ascii value to 64, so we get all index
+      // from 0 to 25.
+      int asciiCode = (int) word.toUpperCase().charAt(index) - 64;
+
+      // If char is not present, it should have false at that index
+      if (!charMap[asciiCode]) charMap[asciiCode] = true;
+      else return false;
+    }
+
+    return true;
+  }
+}
+
+
+code reference java2blog.
