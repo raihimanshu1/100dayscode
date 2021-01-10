@@ -1,0 +1,18 @@
+import java.util. * ;
+/*How to check if String has all unique characters in java*/
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("is word  has unique characters : " + hasAllUniqueChars("world"));
+  }
+
+  public static boolean hasAllUniqueChars(String word) {
+
+    HashSet alphaSet = new HashSet();
+
+    for (int index = 0; index < word.length(); index++) {
+      char c = word.charAt(index);
+      if (!alphaSet.add(c)) return false;
+    }
+    return true;
+  }
+}
