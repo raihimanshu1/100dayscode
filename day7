@@ -29,7 +29,7 @@ public class Main
 	if (!countCharacters.containsKey (c))
 	  {
 	    countCharacters.put (c, 1);
-	  }
+	  }  
 	else
 	  {
 	    countCharacters.put (c, countCharacters.get (c) + 1);
