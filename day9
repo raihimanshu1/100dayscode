@@ -1,0 +1,77 @@
+Process one.
+
+class LenghtOfStringMain{
+ 
+ public static void main(String args[]){
+ 
+  String helloWorld="This is hello world";
+  System.out.println("length of helloWorld string :"+getLengthOfStringWithCharArray(helloWorld));
+  }
+ 
+public static int getLengthOfStringWithCharArray(String str)
+ {
+  int length=0;
+  char[] strCharArray=str.toCharArray();
+  for(char c:strCharArray)
+  {
+   length++;
+  }
+  return length;
+ }
+ 
+Process 2.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+ 
+class LenghtOfStringMain{
+ 
+ public static void main(String args[]){
+ 
+  String helloWorld="This is hello world";
+  System.out.println("length of helloWorld string :"+getLengthOfString(helloWorld));
+ 
+  }
+ 
+  public static int getLengthOfString(String str)
+  {
+    int i=0;
+  try{
+   for(i=0;;i++)
+   {
+    str.charAt(i);
+   }
+ 
+  }
+  catch(Exception e)
+  {
+ 
+  }
+  return i;
+ }
+Refrence java2blog
