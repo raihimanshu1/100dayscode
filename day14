@@ -1,4 +1,5 @@
-/*search an element in a sorted and rotated array
+/*search 
+a smallest element in a sorted and rotated array
 */
 public class Main
 {
