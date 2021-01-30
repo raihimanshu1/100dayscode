@@ -1,0 +1,21 @@
+binary search
+
+ public  static int binarySearch(int[] sortedArray, int elementToBeSearched) {
+        int first = 0;
+        int last = sortedArray.length - 1;
+ 
+        while (first <= last) {
+ 
+            int mid = (first + last) / 2;  // Compute mid point.
+ 
+            if (elementToBeSearched < sortedArray[mid]) {
+                last = mid-1;     // repeat search in first half.
+            } else if (elementToBeSearched > sortedArray[mid]) {
+                first = mid + 1;  // Repeat sortedArray in last half.
+            } else {
+                return mid;     // Found it. return position
+            }
+        }
+ 
+        return -1;    // Failed to find element
+    }
