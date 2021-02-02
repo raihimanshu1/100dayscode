@@ -1,0 +1,63 @@
+
+Find peak element in the array
+
+public class PeakElement {
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+                int[] arr = new int[scn.nextInt()];
+        for (int i = 0; i < arr.length; i++) {
+                    arr[i] = scn.nextInt();
+                            }
+        int peakIndex = solve(0, arr.length - 1, arr);
+        System.out.print("arr[]: {");
+                for (int i = 0; i < arr.length; i++) {
+                            System.out.print(" "+arr[i]);
+                                    }
+        System.out.println(" }");
+                System.out.println("Peak element is : " + arr[peakIndex] +
+                                                   " found at index " + peakIndex);
+    }
+    public static int solve(int start, int end, int[] arr) {
+        // finding mid for dividing the array into two parts
+                int mid = (start + end) / 2;
+        // if the mid element is not the corner element and it is greater 
+                        // than or equal to its neighbours
+                                if ((mid > 0 && mid < arr.length - 1) && (arr[mid] >= 
+                                                     arr[mid + 1] && arr[mid] >= arr[mid - 1])) {
+                                                                 return mid;
+                                                                         }
+        // if the mid element is left corner element and it is greater  
+                        //than or equal to its right neighbour.
+        else if (mid == 0 && mid!= arr.length-1 && arr[mid] >= 
+                                 arr[mid + 1])
+                                         {
+                                                     return mid;
+                                                             }
+        // if the mid element is right corner element and it is greater 
+                        // than or equalto its left neighbour.
+        else if (mid == arr.length - 1 && mid!= 0 && 
+                                 arr[mid - 1] <= arr[mid]) 
+                                         {
+                                                     return mid;
+                                                             }
+        // if mid element is smaller than its left neighbour, 
+                        // then peak element will be in left side for sure.
+        else if (mid != 0 && arr[mid - 1] > arr[mid]) 
+                {
+                            return solve(start, mid - 1, arr);
+                                    } 
+                                            else 
+                                                    {
+                                                                if(mid + 1 <= arr.length-1)
+                                                                            {
+                                                                                           return solve(mid + 1, end, arr);
+                                                                                                       }
+                                                                                                               }
+                                                                                                                       // in case the array has only one element then than is the 
+                                                                                                                                       //peak element
+                                                                                                                                               return 0;
+                                                                                                                                                   }
+}
+ 
+
+Ref java2blog
