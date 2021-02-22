@@ -1,0 +1,24 @@
+Find maximum difference between two elements such that larger element appears after the smaller number.
+
+public static int calculateMaxDifferenceBetweenTwoElements(int[] arr)
+ {
+ int minElementTillNow=arr[0];
+ int maxDifference=Integer.MIN_VALUE;
+ for (int i = 0; i < arr.length; i++) {
+ int difference=0;
+ if(arr[i] >minElementTillNow)
+ {
+ difference=arr[i]-minElementTillNow;
+ if(difference > maxDifference)
+ {
+ maxDifference=difference;
+ }
+ }
+ else
+ {
+ minElementTillNow=arr[i];
+ }
+ }
+ return maxDifference;
+ }
+ 
